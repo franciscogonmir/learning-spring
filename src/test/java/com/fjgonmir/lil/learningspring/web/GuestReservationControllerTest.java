@@ -18,7 +18,7 @@ import static org.hamcrest.CoreMatchers.containsString;
 import static org.mockito.Mockito.when;
 
 @WebMvcTest(GuestReservationController.class)
-public class GuestReservationControllerTest {
+class GuestReservationControllerTest {
 
     @MockBean
     private GuestService guestService;
@@ -26,7 +26,7 @@ public class GuestReservationControllerTest {
     private MockMvc mockMvc;
 
     @Test
-    public void getGuestReservationhasDataInResponse() throws Exception{
+    void getGuestReservationhasDataInResponse() throws Exception {
         Guest guest = new Guest();
         guest.setGuestId(1L);
         guest.setFirstName("Guest");
