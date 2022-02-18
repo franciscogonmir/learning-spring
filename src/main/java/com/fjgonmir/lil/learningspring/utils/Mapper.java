@@ -2,19 +2,20 @@ package com.fjgonmir.lil.learningspring.utils;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fjgonmir.lil.learningspring.entity.Room;
-
-import java.util.List;
+import com.fjgonmir.lil.learningspring.exceptions.MapperException;
 
 public class Mapper {
 
-    public static String convertObjectToJsonString(List<Room> roomList){
+    private Mapper() {
+        throw new IllegalStateException("utility class");
+    }
+
+    public static String convertObjectToJsonString(Object roomList) throws MapperException {
         try {
             ObjectMapper mapper = new ObjectMapper();
             return mapper.writeValueAsString(roomList);
         } catch (JsonProcessingException e) {
-            e.printStackTrace();
-            throw new RuntimeException();
+            throw new MapperException(e.getMessage());
         }
     }
 }
