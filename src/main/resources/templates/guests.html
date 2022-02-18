@@ -42,10 +42,10 @@
             <td>mail address</td>
         </tr>
         <tr th:each="guest: ${guestList}">
-            <td th:text="${guest.firstName != null ? ${guest.firstName} : 'VACANT'}">first Name</td>
-            <td th:text="${guest.lastName != null ? ${guest.lastName} : 'VACANT'}">last Name</td>
-            <td th:text="${guest.phoneNumber != null ? ${guest.phoneNumber} : '-'}">phone Number</td>
-            <td th:text="${guest.emailAddress}!=null? ${guest.emailAddress}} : '-'">Email address</td>
+            <td th:text="${guest.firstName}!=null? ${guest.firstName} : 'VACANT'">first Name</td>
+            <td th:text="${guest.lastName}!=null? ${guest.lastName} : 'VACANT'">last Name</td>
+            <td th:text="${guest.phoneNumber}!=null? ${guest.phoneNumber} : '-'">phone Number</td>
+            <td th:text="${guest.emailAddress}!= null? ${guest.emailAddress} : '-'">Email address</td>
         </tr>
     </table>
 </div>
