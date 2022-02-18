@@ -24,7 +24,7 @@ import java.util.List;
 
 @WebMvcTest(RoomController.class)
 @AutoConfigureMockMvc
-public class RoomControllerTest {
+class RoomControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
@@ -34,7 +34,7 @@ public class RoomControllerTest {
     private List<Room> rooms;
 
     @BeforeEach
-    public void init(){
+    void init() {
         rooms = new ArrayList<>();
         Room room1 = new Room();
         room1.setRoomId(1);
@@ -53,16 +53,16 @@ public class RoomControllerTest {
     }
 
     @Test
-    public void shouldReturnStatusOk() throws Exception {
+    void shouldReturnStatusOk() throws Exception {
         when(roomRepository.findAll()).thenReturn(rooms);
         this.mockMvc.perform(
-            get("/rooms")
+                get("/rooms")
         ).andDo(
-            print()
+                print()
         ).andExpect(
-            status().isOk()
+                status().isOk()
         ).andExpect(
-            content().json(Mapper.convertObjectToJsonString(rooms))
+                content().json(Mapper.convertObjectToJsonString(rooms))
         );
     }
 }

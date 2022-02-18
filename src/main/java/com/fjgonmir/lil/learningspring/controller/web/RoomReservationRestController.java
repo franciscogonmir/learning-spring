@@ -1,8 +1,8 @@
 package com.fjgonmir.lil.learningspring.controller.web;
 
 
-import com.fjgonmir.lil.learningspring.Business.domain.RoomReservation;
-import com.fjgonmir.lil.learningspring.Business.services.ReservationService;
+import com.fjgonmir.lil.learningspring.business.domain.RoomReservation;
+import com.fjgonmir.lil.learningspring.business.services.ReservationService;
 import com.fjgonmir.lil.learningspring.utils.DateUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

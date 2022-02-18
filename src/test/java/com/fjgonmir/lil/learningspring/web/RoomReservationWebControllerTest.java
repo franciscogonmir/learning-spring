@@ -7,8 +7,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import com.fjgonmir.lil.learningspring.Business.domain.RoomReservation;
-import com.fjgonmir.lil.learningspring.Business.services.ReservationService;
+import com.fjgonmir.lil.learningspring.business.domain.RoomReservation;
+import com.fjgonmir.lil.learningspring.business.services.ReservationService;
 import com.fjgonmir.lil.learningspring.controller.web.RoomReservationController;
 import com.fjgonmir.lil.learningspring.utils.DateUtil;
 import org.junit.jupiter.api.Test;
@@ -23,7 +23,7 @@ import java.util.List;
 
 
 @WebMvcTest(RoomReservationController.class)
-public class RoomReservationWebControllerTest {
+class RoomReservationWebControllerTest {
 
     @MockBean
     private ReservationService reservationService;
@@ -32,7 +32,7 @@ public class RoomReservationWebControllerTest {
 
 
     @Test
-    public void getReservations() throws Exception {
+    void getReservations() throws Exception {
         String dateString = "2020-01-01";
         Date date = DateUtil.createDateFromDateString(dateString);
         List<RoomReservation> roomReservationList = new ArrayList<>();
@@ -46,11 +46,11 @@ public class RoomReservationWebControllerTest {
         roomReservation.setRoomNumber("J1");
         roomReservationList.add(roomReservation);
         when(this.reservationService.getRoomReservationsForDate(date))
-            .thenReturn(roomReservationList);
+                .thenReturn(roomReservationList);
         this.mockMvc
-            .perform(get("/room-reservations?date=2020-01-01"))
-            .andExpect(status().isOk())
-            .andExpect(model().attributeExists("roomReservations"))
-            .andExpect(content().string(containsString("unit")));
+                .perform(get("/room-reservations?date=2020-01-01"))
+                .andExpect(status().isOk())
+                .andExpect(model().attributeExists("roomReservations"))
+                .andExpect(content().string(containsString("unit")));
     }
 }

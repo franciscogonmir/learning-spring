@@ -1,6 +1,6 @@
 package com.fjgonmir.lil.learningspring.web;
 
-import com.fjgonmir.lil.learningspring.Business.services.GuestService;
+import com.fjgonmir.lil.learningspring.business.services.GuestService;
 import com.fjgonmir.lil.learningspring.controller.web.GuestReservationController;
 import com.fjgonmir.lil.learningspring.entity.Guest;
 import org.junit.jupiter.api.Test;
