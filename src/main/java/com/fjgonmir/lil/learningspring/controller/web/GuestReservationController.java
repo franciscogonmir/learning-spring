@@ -1,15 +1,11 @@
 package com.fjgonmir.lil.learningspring.controller.web;
 
-import com.fjgonmir.lil.learningspring.Business.services.GuestService;
-import com.fjgonmir.lil.learningspring.entity.Guest;
-import org.apache.catalina.LifecycleState;
+import com.fjgonmir.lil.learningspring.business.services.GuestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import java.util.List;
 
 @Controller
 @RequestMapping("guest-reservations")

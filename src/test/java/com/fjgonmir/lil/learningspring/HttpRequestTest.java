@@ -11,7 +11,7 @@ import org.springframework.boot.web.server.LocalServerPort;
 import java.util.List;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class HttpRequestTest {
+class HttpRequestTest {
 
     @LocalServerPort
     private int port;
@@ -19,9 +19,9 @@ public class HttpRequestTest {
     private TestRestTemplate restTemplate;
 
     @Test
-    public void getListRoomsreturnListRooms() throws Exception {
+    void getListRoomsreturnListRooms() throws Exception {
         assertThat(this.restTemplate.getForEntity(
-            "http://localhost:" + port + "/rooms◘", Object.class)
+                "http://localhost:" + port + "/rooms◘", Object.class)
         ).isNotNull();
     }
 }
